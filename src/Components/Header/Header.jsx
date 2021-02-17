@@ -1,0 +1,79 @@
+import React from 'react';
+import './Header.scss';
+import Logo from '../Assets/education.svg';
+import online from '../Assets/online.jpeg'
+
+
+function Header() {
+  return (
+  <div className="header">
+<nav class="navbar ">
+<li className="headerIcon">
+              <img className="headerIcon" src={Logo} />
+            </li>
+            <li className="headerName">
+              <h3>BookStore</h3>
+            </li>
+            <li className="headerserach">
+            <form  action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search"/> 
+  </form>
+  </li>
+  <li>
+  <a className="headerprofile" data-toggle="collapse" href="#collapseExample" role="button">
+  <svg xmlns="http://www.w3.org/2000/svg"  width="25" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+</svg>
+<h2 className="headerprofilename">Profile</h2>
+</a>
+</li>
+
+</nav>
+<div className="info">
+
+
+<div class="collapse" id="collapseExample">
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Welcome</h5>
+    <h7 class="card-subtitle mb-2 text-muted">To Ascess Account and Manage orders </h7>
+    <div className="headerlogin">
+    <button type="button" class="btn btn-outline-danger"  data-toggle="modal" data-target="#exampleModal">LOGIN/SIGNUP</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div className="loginsignup">
+<div class="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 className="Modellogin" id="exampleModalLabel">LOGIN</h3>
+        <h3 className="Modelsignup" id="exampleModalLabel">SIGNUP</h3>
+        
+        
+      </div>
+      
+      <div class="modal-footer">
+       .
+     
+      </div>
+    </div>
+  </div>
+{/* <div className="headeronlinediv">
+<img className="headeronline" src={online} />
+</div> */}
+
+
+</div>
+
+</div>
+
+
+</div>
+  );
+};
+
+export default Header;

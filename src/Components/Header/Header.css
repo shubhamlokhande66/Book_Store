@@ -1,0 +1,87 @@
+.navbar {
+  background: #A03037 0% 0% no-repeat padding-box;
+  height: 60px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #fff;
+}
+
+.headerIcon {
+  position: fixed;
+  left: 164px;
+  margin-left: -3em;
+  width: 31px;
+  height: 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerName {
+  margin-top: 0.5em;
+  text-align: right;
+  position: absolute;
+  margin-left: 10em;
+  font: normal normal normal 20px/26px Roboto;
+  color: white;
+}
+
+.headerserach {
+  margin-top: 0em;
+  position: absolute;
+  width: 35em;
+  margin-left: 25em;
+}
+
+.headerprofile {
+  position: fixed;
+  margin-left: 65em;
+  margin-top: -1.5em;
+  color: #f8f1f1;
+}
+
+.headerprofilename {
+  font-size: small;
+  margin-top: -0.1em;
+  margin-left: -0.4em;
+}
+
+.info {
+  margin-top: 0em;
+  width: 20em;
+  margin-left: 60em;
+  height: 6px;
+}
+
+.headerlogin {
+  margin-top: 1em;
+}
+
+.Modelsignup {
+  margin-left: 5em;
+}
+
+.Modellogin {
+  margin-left: 2em;
+}
+
+.modal-footer {
+  margin-top: 15em;
+}
+
+.modal-dialog {
+  margin-top: 8em;
+}
+
+.headeronline {
+  margin-top: -33em;
+  width: 22em;
+  height: 25em;
+  margin-left: 6em;
+}
+/*# sourceMappingURL=Header.css.map */
