@@ -17,7 +17,8 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: ['babel-loader'],
+                
             },
 
             {
@@ -57,14 +58,14 @@ module.exports = {
                 ],
             },
 
-           
+            
         ]
     },
 
     plugins: [
         new HtmlWebpackPlugin({
             template: 'dist/index.html',
-          //  favicon: 'public/favicon.ico'
+            // favicon: '/dist/download.png',
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],
