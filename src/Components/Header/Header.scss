@@ -3,7 +3,7 @@
     height: 60px;
   z-index:3;
     width: 90em;
-    margin-top: 0em;
+    margin-top: -4em;
 position: fixed;
    
 }
@@ -26,6 +26,10 @@ a:link, a:visited {
 .card{
   margin-top: 4em;
     z-index: 1;
+}
+.headercard{
+    position: absolute;
+    margin-top: -3em;
 }
 
 .headerIcon{
@@ -152,9 +156,48 @@ color: hsl(0, 100%, 100%);
 }
 
 
-@media only screen and (max-width: 600px) {
+@media all and (min-device-width: 320px) and (max-device-width: 960px) {
     .navbar {
-        width: 800em;
+      height: 8em;
        
     }
+    .headerIcon{
+        width: 6em;
+        height: 5em;
+    }
+    .headerName{
+display: none;
+     
+    }
+    .form-control{
+        width: 20em;
+        height: 5em;
+    }
+.bi{
+    width:4em;
+    height:4em;
+}
+.headerprofile{
+    margin-top:-3em;
+    margin-left: 45em;
+}
+.headerprofilename{
+font-size: 2em;
+}
+.headercart{
+    margin-top: -3em;
+    position: absolute;
+    margin-left: -30em;
+}
+.headercartname{
+    margin-left: 0em;
+    font-size: 2em;
+}
+.headercard{
+    position: absolute;
+    margin-top: 1em;
+    margin-left: -19em;
+    width: 19em;
+}
+.modal-content{    margin-top: 20em;}
   }

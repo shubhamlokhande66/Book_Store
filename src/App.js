@@ -8,7 +8,9 @@ import Signup from './Components/pages/signup/signup'
 import Login from './Components/pages/login/login'
 import Displaybook from './Components/DisplayBooks/Displaybook'
 import Dashboard from './Components/Dashborad/Dashboard'
-
+import Cart from "./Components/Cart/Cart"
+import Placce from "./Components/Orderplace/OrderPlace"
+import AdminLogin from './Components/AdminSection/Adminlogin/Adminlogin'
 
 const App = () => {
   return (
@@ -18,9 +20,11 @@ const App = () => {
         <Route path="/" exact component={Dashboard}></Route>
         <Route path="/signup" component={Signup}></Route>
         <Route path="/login" component={Login}></Route>
-        <Route path="/displaybook" component={Displaybook}></Route>
+        <Route path="/AdminLogin" component={AdminLogin}></Route>
+        <Route path="/Displaybook" component={Displaybook}></Route>
+        <Route path="/cart" component={Cart}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
-    
+        <Route path="/Place" component={Placce}></Route>
         </Switch>
       </div>
       </Routing>

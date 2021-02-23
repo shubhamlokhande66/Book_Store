@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import userServices from "../../../Services/userServices";
-import './login.scss'
+import './Adminlogin.scss'
 const regexValidateEmail = new RegExp(
   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$$/
 );
@@ -104,18 +104,17 @@ class Login extends Component {
 
     render() {
   return (
-    <div className="signup">
+    <div className="adminsignup">
+      <h3 className="AdminName">Admin Login</h3>
     <form  autocomplete="off">
-     
+     <div className="admibody">
           <div class="form-group">
       <label for="exampleInputEmail1">Email Id</label>
       <input 
                     value={this.state.email}
                     onChange={this.onchangeEmail}
-
                     variant="outlined"
                     label="email"
-                
                     placeholder="email"
                    
                     type="text"
@@ -141,14 +140,8 @@ class Login extends Component {
    
                     <span className='error-output'> {this.state.errors["password"]}</span>
           </div>
-          <button type="button" class="btn1 btn-danger" onClick={(e) => this.onSubmit(e)}>Login</button>
-<div className="or">
-  <h6>-------------OR--------------</h6>
-</div>
-
-
-<button type="button" class="Facebook btn-primary">Facebook</button>
-<button type="button" class="Google btn-outline-secondary">Google</button>
+          <button type="button" class="btnadmin btn-danger" onClick={(e) => this.onSubmit(e)}>Login</button>
+          </div>
           </form>
           </div>
   

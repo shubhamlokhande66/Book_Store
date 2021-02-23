@@ -24,5 +24,22 @@ export default class productServices {
         },
       });
   };
+  addOrder = (data) => {
+    const user = localStorage.getItem("bookStoreToken")
+    console.log(data);
+    return axios.Post(`${baseUrl}/add/order`,data,{
+        headers: {
+          "x-access-token": `${user}`,
+        },
+      });
+  };
 
+  deleteCartItem = (id) => {
+    const user = localStorage.getItem("bookStoreToken")
+    return axios.Delete(`${baseUrl}/remove_cart_item/${id}`,{
+        headers: {
+          "x-access-token": `${user}`,
+        },
+      });
+  }
 }

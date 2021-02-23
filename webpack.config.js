@@ -38,7 +38,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpe?g|gif|jpg|svg)$/i,
+                test: /\.(png|jpe?g|gif|jpg|svg|jfif)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[path][name].[ext]',
@@ -78,7 +78,7 @@ module.exports = {
     },
     resolve: {
 
-        extensions: ["*", ".js", ".jsx", ".css", ".scss",".png",".jpg"],
+        extensions: ["*", ".js", ".jsx", ".css", ".scss",".png",".jpg",".jfif"],
         alias: {
             "react-dom": "@hot-loader/react-dom",
         },

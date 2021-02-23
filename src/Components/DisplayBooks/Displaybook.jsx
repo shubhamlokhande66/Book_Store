@@ -1,31 +1,14 @@
-import React, { useState, useEffect, Fragment } from 'react';
-
+import React, { useState, useEffect ,useContext } from 'react';
 import Bookservice from "../../Services/BookService"
 import './Displaybooks.scss'
 import bookImg from "../Assets/Image11.png";
- const bookservice= new Bookservice();
-export default function DisplayNotes() {
-  const [BookList, setBookList] = useState([]);
-console.log(BookList)
-    useEffect(() => {
-        getAllBooks();
-      }, []);
+import bookListContext from "../Context/Context";
 
 
 
+const bookservice= new Bookservice();
 
-    const getAllBooks = () => { 
-        bookservice
-          .getBooks()
-          .then((res) => {
-            console.log(res)
-            setBookList(res.data.result);
-            
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      };
+ export default function DisplayNotes( ) {
 
       const addedToBag = (e,item) => { 
         console.log(item)
@@ -42,13 +25,22 @@ console.log(BookList)
             console.log(err);
           });
       };
+       const addedToWhishlist=()=>{
 
+       }
+
+
+
+
+      const {books} = useContext(bookListContext);
+console.log("booksnew",books)
     return (
+
       <div className="DisplayMain">
         <div className="bookSize">
           Books 
         </div>
-        <div className="bookSize1">({BookList.length} items) </div>
+        <div className="bookSize1">({books.length} items) </div>
         {/* <div>
         <select class="form-control form-control-sm">
   <option>Small select</option>
@@ -59,8 +51,8 @@ console.log(BookList)
         </div> */}
         
 <div className="container-fluid">
-
-{BookList.map((item)=>(
+ 
+{books.map((item)=>(
   <div className="display">
   <div class="noteCard my-2 mx-2 card" >
 
@@ -69,7 +61,7 @@ console.log(BookList)
   </div>
 
   <div className="title">
-    <h5 class="card-title"> {item.bookName}</h5>
+    <h4 class="card-title"> {item.bookName}</h4>
     </div>
     <div className="author">
 by {item.author}
@@ -80,19 +72,54 @@ by {item.author}
   <div className="price">
     Rs.{item.price}
     </div>
-    <div className="displayadd">
-      
-    <button type="button" className="displayadd1" onClick={(e) =>addedToBag(e,item)}>ADD TO BAG</button>
-    {/* <button type="button" class="btn btn-secondary">Secondary</button> */}
+
+   { item.isCart ? (
+<button className="addedtobag" >
+ADDED TO BAG
+</button>
+                  ) : (
+    <div className="displayadd"> 
+    <button type="button" className=" displayadd1" onClick={(e) =>addedToBag(e,item)}> ADD TO BAG </button>
+    
+    
+    <button type="button" className="displayWhishlist1" onClick={(e) =>addedToWhishlist(e,item)}>WHISHLIST</button>
     </div>
-    <div className="displayWhishlist">
-    <button type="button" className="displayWhishlist1">WHISHLIST</button>
-    </div>
+
+                  )}
+                   <div className="descClass">
+                     <div className="bookdetails">
+              Book Detail
+              </div>
+              {item.description}
+            </div>
+
 </div>
 </div>
  ))}
 
  </div>
+
+
+
+ <nav aria-label="Page navigation example" className="paginationdisplay">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class=" black page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
  </div>
 
     );
