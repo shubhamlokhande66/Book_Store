@@ -1,32 +1,13 @@
+import Axios from "./axoisServices";
+const axios = new Axios();
+const URL = process.env.REACT_APP_BASE_URL;
 
-import axios from 'axios'
+let userregister = (data) => {
+  return axios.Post(`${URL} /registration`, data);
+};
 
-let UserRegister = (data) => {
-    const URL = "https://backend-bookstore.herokuapp.com/bookstore_user/registration";
-    console.log("This is from service class", data);
-    return axios.post(`${URL}`, data)
-  };
+let userlogin = (data) => {
+  return axios.Post(`${URL}/login`, data);
+};
 
-  let userlogin = (data) => {
-    const URL = "https://backend-bookstore.herokuapp.com/bookstore_user/login";
-    console.log("This is from service class", data);
-    return axios.post(`${URL}`, data)
-  };
-
-
-
-
-
-
-// export default class userServices {
-//     SignUp = (data) => {
-//         return axios.Post(`${baseUrl}/registration`, data);
-//     };
-
-//     SignIn = (data) => {
-//         return axios.Post(`${baseUrl}/login`, data);
-//     }
-
-// }
-
-export default { UserRegister ,userlogin }
+export default { userregister, userlogin };
