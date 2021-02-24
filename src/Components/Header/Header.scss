@@ -1,203 +1,192 @@
-.navbar{
-    background: #A03037 0% 0% no-repeat padding-box;
-    height: 60px;
-  z-index:3;
-    width: 90em;
-    margin-top: -4em;
-position: fixed;
-   
+.navbar {
+  background: #a03037 0% 0% no-repeat padding-box;
+  height: 60px;
+  z-index: 3;
+  width: 90em;
+  margin-top: -4em;
+  position: fixed;
 }
-
 
 .modal-content {
-border-radius: 3%;
-
+  border-radius: 3%;
 }
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-a:link, a:visited {
-   
-    color: white;
-    text-decoration: none;
-   
-  }
-.card{
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+.card {
   margin-top: 4em;
-    z-index: 1;
+  z-index: 1;
 }
-.headercard{
-    position: absolute;
-    margin-top: -3em;
+.headercard {
+  position: absolute;
+  margin-top: -3em;
 }
 
-.headerIcon{
-position: fixed;
-left: 164px;
-margin-left:-3em;
-width: 31px;
-height: 24px;
-align-items: center;
+.headerIcon {
+  position: fixed;
+  left: 164px;
+  margin-left: -3em;
+  width: 31px;
+  height: 24px;
+  align-items: center;
 }
-.headerName{
-
+.headerName {
   margin-top: 0.5em;
-    text-align: right;
-    position: absolute;
-    margin-left: 7em;
-font: normal normal normal 20px/26px Roboto;
+  text-align: right;
+  position: absolute;
+  margin-left: 7em;
+  font: normal normal normal 20px/26px Roboto;
 
-color: hsl(0, 100%, 100%);
-
-
+  color: hsl(0, 100%, 100%);
 }
-.headerserach{
-    margin-top: 0em;
-    position:absolute;
-    width: 35em;
+.headerserach {
+  margin-top: 0em;
+  position: absolute;
+  width: 35em;
 
-    margin-left: 20em;
+  margin-left: 20em;
 }
-.headerprofile{
-    position: fixed;
-    margin-left: 63em;
-    margin-top: -1.5em;
-   
-    color: hsl(0, 33%, 96%);
+.headerprofile {
+  position: fixed;
+  margin-left: 63em;
+  margin-top: -1.5em;
+
+  color: hsl(0, 33%, 96%);
 }
-.headerprofilename{
-    font-size: small;
-    margin-top: -0.1em;
-    margin-left: -0.4em;
+.headerprofilename {
+  font-size: small;
+  margin-top: -0.1em;
+  margin-left: -0.4em;
 }
 
-.headercart{
-    margin-left: -12em;
-    margin-top: -1.5em;
-   cursor: pointer;
-    color: floralwhite;
-
+.headercart {
+  margin-left: -12em;
+  margin-top: -1.5em;
+  cursor: pointer;
+  color: floralwhite;
 }
-.headercartname{
-    font-size: small;
-    margin-top: -0.1em;
-    margin-left: -15em;
-    color: floralwhite;
+.headercartname {
+  font-size: small;
+  margin-top: -0.1em;
+  margin-left: -15em;
+  color: floralwhite;
 }
-.info{
-    margin-top: -1em;
-    width: 20em;
-    margin-left: 60em;
-    height: 6px;
-    position: absolute;
+.info {
+  margin-top: -1em;
+  width: 20em;
+  margin-left: 60em;
+  height: 6px;
+  position: absolute;
 }
-.collapse{
-    z-index: 1;
+.collapse {
+  z-index: 1;
 }
-.headerlogin{
-    margin-top: 1em;
-    width: 10em;
+.headerlogin {
+  margin-top: 1em;
+  width: 10em;
 }
-.Modelsignup{
-    position: absolute;
-    margin-left:10em;
+.Modelsignup {
+  position: absolute;
+  margin-left: 10em;
 }
-.Modellogin{
-    margin-left: 2em;
+.Modellogin {
+  margin-left: 2em;
 }
-.modal-footer{
-    margin-top: 15em;
-}
-
-.modal-dialog{
-    width: 20em;
-  
-    margin-top: 6em;
-    box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
-    border-radius: 150px;
-}
-.HeaderSignupbutton{
-    position: absolute;
-    margin-left: 16em;
-    margin-top: 0.5em;
+.modal-footer {
+  margin-top: 15em;
 }
 
-.HeaderLoginbutton{
-    margin-top: 0.5em;
-    margin-left: 2.5em;
-}
-.headeronline{
-   
+.modal-dialog {
+  width: 20em;
 
-    margin-top: 3em;
-    width: 15em;
-    height: 15em;
-    margin-left: 3em;
+  margin-top: 6em;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  border-radius: 150px;
 }
-.headeronlinediv{
-   z-index: -1;
- background-color:ghostwhite;
- width: 25em;
- height: 25em;
- margin-top: -12em;
- margin-left: -22em;
- border-radius: 5%;
-}
-.up{
-    width: 20em;
-    margin-top: -4em;
-    margin-left: -37.5em;
-}
-.modal-content{
-    width: 25em;
-    height: 30em;
+.HeaderSignupbutton {
+  position: absolute;
+  margin-left: 16em;
+  margin-top: 0.5em;
 }
 
+.HeaderLoginbutton {
+  margin-top: 0.5em;
+  margin-left: 2.5em;
+}
+.headeronline {
+  margin-top: 3em;
+  width: 15em;
+  height: 15em;
+  margin-left: 3em;
+}
+.headeronlinediv {
+  z-index: -1;
+  background-color: ghostwhite;
+  width: 25em;
+  height: 25em;
+  margin-top: -12em;
+  margin-left: -22em;
+  border-radius: 5%;
+}
+.up {
+  width: 20em;
+  margin-top: -4em;
+  margin-left: -37.5em;
+}
+.modal-content {
+  width: 25em;
+  height: 30em;
+}
 
 @media all and (min-device-width: 320px) and (max-device-width: 960px) {
-    .navbar {
-      height: 8em;
-       
-    }
-    .headerIcon{
-        width: 6em;
-        height: 5em;
-    }
-    .headerName{
-display: none;
-     
-    }
-    .form-control{
-        width: 20em;
-        height: 5em;
-    }
-.bi{
-    width:4em;
-    height:4em;
-}
-.headerprofile{
-    margin-top:-3em;
+  .navbar {
+    height: 8em;
+  }
+  .headerIcon {
+    width: 6em;
+    height: 5em;
+  }
+  .headerName {
+    display: none;
+  }
+  .form-control {
+    width: 20em;
+    height: 5em;
+  }
+  .bi {
+    width: 4em;
+    height: 4em;
+  }
+  .headerprofile {
+    margin-top: -3em;
     margin-left: 45em;
-}
-.headerprofilename{
-font-size: 2em;
-}
-.headercart{
+  }
+  .headerprofilename {
+    font-size: 2em;
+  }
+  .headercart {
     margin-top: -3em;
     position: absolute;
     margin-left: -30em;
-}
-.headercartname{
+  }
+  .headercartname {
     margin-left: 0em;
     font-size: 2em;
-}
-.headercard{
+  }
+  .headercard {
     position: absolute;
     margin-top: 1em;
     margin-left: -19em;
     width: 19em;
-}
-.modal-content{    margin-top: 20em;}
   }
+  .modal-content {
+    margin-top: 20em;
+  }
+}
