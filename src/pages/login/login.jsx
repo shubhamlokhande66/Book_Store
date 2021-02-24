@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import userServices from "../../../Services/userServices";
+import userServices from "../../Services/userServices";
 import "./login.scss";
 const regexValidateEmail = new RegExp(
   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$$/

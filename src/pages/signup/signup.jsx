@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./signup.scss";
-import userServices from "../../../Services/userServices";
+import userServices from "../../Services/userServices";
 
 const regexValidateEmail = new RegExp(
   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$$/
@@ -124,7 +124,7 @@ class Signup extends Component {
       phone: this.state.mobilenumber,
     };
     userServices
-      .UserRegister(data)
+      .userregister(data)
       .then((data) => {
         console.log("registration successful" + data);
         this.setState({

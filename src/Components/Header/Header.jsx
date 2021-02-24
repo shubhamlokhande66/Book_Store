@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import "./Header.scss";
 import { withRouter } from "react-router-dom";
-import Logo from "../Assets/education.svg";
-import online from "../Assets/component.png";
-import Signup from "../pages/signup/signup";
-import Login from "../pages/login/login";
+import Logo from "../../Assets/education.svg";
+import online from "../../Assets/component.png";
+import Signup from "../../pages/signup/signup";
+import Login from "../../pages/login/login";
 import { useHistory } from "react-router-dom";
 
 const Header = () => {
@@ -70,8 +70,6 @@ const Header = () => {
     );
   };
 
-  const cartlength = useContext(cartItemLength);
-  console.log("cartlength", cartlength);
   return (
     <div className="header">
       <nav className="navbar ">

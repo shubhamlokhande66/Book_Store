@@ -1,9 +1,9 @@
 import React from "react";
 import "./OrderPlace.scss";
-import placed from "../Assets/Placed.jpg";
+import placed from "../../Assets/Placed.jpg";
 import { useHistory } from "react-router-dom";
 
-export default function OrderPlaced(props) {
+export default function OrderPlaced() {
   let history = useHistory();
   const random = Math.floor(Math.random() * 1000000 + 1);
   const Handledashboard = () => {

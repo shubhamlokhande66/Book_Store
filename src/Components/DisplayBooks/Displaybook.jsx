@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Bookservice from "../../Services/BookService";
 import "./Displaybooks.scss";
-import bookImg from "../Assets/Image11.png";
+import bookImg from "../../Assets/Image11.png";
 import bookListContext from "../Context/Context";
 
 const bookservice = new Bookservice();

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import bookImg from "../Assets/Image11.png";
+import bookImg from "../../Assets/Image11.png";
 import cartItemLength from "../Context/Context";
 import Services from "../../Services/BookService";
 import AppBar from "../Header/Header"
