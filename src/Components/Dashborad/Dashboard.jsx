@@ -13,7 +13,7 @@ import Orderplace from "../Orderplace/OrderPlace"
 // const services = new Services();
  
 
-export default function DisplayNotes( props) {
+export default function  DisplayNotes( props) {
   const [BookList, setBookList] = useState([]);
   const [orderPlaced, setOrderPlaced] = React.useState([]);
 console.log("Book list : ",BookList);

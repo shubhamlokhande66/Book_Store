@@ -1,16 +1,17 @@
 import React, { useState ,useContext} from 'react';
 import './Header.scss';
+import { withRouter } from "react-router-dom";
 import Logo from '../Assets/education.svg';
 import online from '../Assets/component.png';
 import Signup from '../pages/signup/signup';
 import Login from '../pages/login/login';
 import cartItemLength from "../Context/Context";
-
+import { useHistory } from "react-router-dom";
 
 
 const Header =(props)=>{
 
-   
+  let history = useHistory();
 
   // const handleLogInBtn = () => {
   //   setFlag(true);
@@ -21,7 +22,9 @@ const Header =(props)=>{
   // }
   
 //  const val = "valLogin";
-
+const HandleDashboard = () => {
+  history.push('/dashboard');
+}
 
 
 const Modal = () => {
@@ -85,8 +88,8 @@ console.log("cartlength",cartlength)
    
   <div className="header">
 <nav className="navbar ">
-<li className="headerIcon">
-              <img className="headerIcon" src={Logo} />
+<li className="headerIcon" >
+              <img  className="headerIcon" src={Logo} onClick={() => HandleDashboard()}  />
             </li>
             <li className="headerName">
               <h3>BookStore</h3>
@@ -140,4 +143,4 @@ console.log("cartlength",cartlength)
 </div>
   );
 }
-export default Header;
+export default withRouter(Header);

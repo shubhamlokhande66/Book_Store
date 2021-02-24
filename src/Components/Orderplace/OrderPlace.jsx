@@ -1,11 +1,18 @@
 import React from "react";
 import "./OrderPlace.scss";
 import placed from "../Assets/Placed.jpg";
+import { useHistory } from "react-router-dom";
 
 
 export default function OrderPlaced(props) {
-
+  let history = useHistory();
   const random = Math.floor((Math.random() * 1000000 ) + 1);
+  const Handledashboard = () => {
+    history.push('/dashboard');
+  }
+
+
+
   return (
     <div className="placedBody">
       <img className="successfulImage" src={placed} alt="" />
@@ -41,8 +48,7 @@ export default function OrderPlaced(props) {
       <div className="buttonplace">
       <button className="placebutton"
         
-        onClick={(e) => {
-          props.nextPath(e, "./dashboard");
+        onClick={() => {Handledashboard();
         }}
        
       >
