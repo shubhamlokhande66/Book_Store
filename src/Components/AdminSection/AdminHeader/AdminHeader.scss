@@ -2,6 +2,9 @@
     background: #a03037 0% 0% no-repeat padding-box;
     height: 60px;
     width: 84em;
+    margin-top: -2em;
+    position: fixed;
+    z-index: 2;
 }
 .adminheaderIcon{
     margin-left: 5em;
@@ -50,26 +53,36 @@ margin-top: 0.9em;
         color: hsl(0, 100%, 100%);
         position: absolute;
         margin-left: 9em;
-        margin-top: 27px;
+        margin-top: 35px;
     }
     .adminheaderserach{
         margin-top: 0.9em;
-            position: absolute;
-            width: 30em;
+         
+            width: 15em;
             height: 3em;
             margin-left: 24em;
         }
+        .adminheaderserach1{
+            margin-top: 0.9em;
+             
+                width: 20em;
+                height: 3em;
+                margin-left: 1.5em;
+            }
         .Adminheaderprofile{
             position: absolute;
-        
-            width: 2em;
-            height: 2em;
-            margin-left: 60em;
+        margin-top: -0.1em;
+            width: 1em;
+            height: 1em;
+            margin-left: 50em;
         }
         .Adminheaderprofilename{
-            margin-left: -6.5em;
-      
+            margin-left: 0em;
+      margin-top: -0.8em;
             font-size: 20px;
             
+        }
+        .Adminheaderprofile1{
+            width: 3em;
         }
 }
