@@ -75,7 +75,7 @@ class Login extends Component {
         console.log(
           "Login successful" + JSON.stringify(data.data.result.accessToken)
         );
-        localStorage.setItem("bookStoreToken", data.data.result.accessToken);
+        localStorage.setItem("bookStoreTokenX", data.data.result.accessToken);
 
         localStorage.setItem("email", data.data.email);
         setTimeout(() => {
