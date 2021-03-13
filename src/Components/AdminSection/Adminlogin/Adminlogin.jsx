@@ -76,8 +76,7 @@ class Login extends Component {
           "Login successful" + JSON.stringify(data.data.result.accessToken)
         );
         localStorage.setItem("bookStoreTokenX", data.data.result.accessToken);
-
-        localStorage.setItem("email", data.data.email);
+        localStorage.setItem("Email", data.config.data);
         setTimeout(() => {
           this.props.history.push("/admindashboard");
         }, 2000);
