@@ -9,13 +9,33 @@
 .AddButton{
     margin-top: 2em;
 }
-.tablemain{
+.table{
     margin-top: 3em;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
+// .table thead{
+// display:block;
+// width: 100%;
+// overflow: auto;
+// height: 100px;
+// }
+.btnadd1{
+    margin-top: 3em;
+    color: floralwhite;
+    background-color: brown;
+    outline-style: auto;
+}
+.btnadd{
+    color: floralwhite;
+    background-color: brown;
+    outline-style: auto;
+}
 .addbookm{
     width: 20em;
-    height: 4em;
+    height: 5em;
+
 }
 .booksfooter{
     margin-top: 3px;
@@ -25,8 +45,12 @@
     margin-left: 18em;
 }
 .mainbosy{
-    height: 33em;
+    height: 39em;
     width: 30em;
+}
+.updatemodel{
+    margin-top: 0.7em;
+
 }
 .maininput{
     margin-left: 4.7em;
@@ -47,12 +71,34 @@ table tr td:first-child::before {
     min-width: 1em;
     margin-right: 0.5em;
 }
-
+.closed{
+    margin-top: 35.3em;
+    margin-left: 4.8em;
+    position: absolute;
+}
+.booksinputad{
+    width: 20em;
+    height: 2em;
+}
 
 @media all and (min-device-width: 320px) and (max-device-width: 960px) {
-    .tablemain{
-      font-size: 2.2em;
-      margin-left: -4em;
+    .table{
+        position:absolute ;
+        margin-left: -2em;
+        margin-top: 1em;
+       font-size: 3em;
+        display:block;
+    width: 18em;
+    overflow: auto;
+    height: 30em;
+        border-collapse: collapse;
+    }
+    .btnadd1{
+        margin-top: 6em;
+        color: floralwhite;
+        font-size: 1em;
+        background-color: brown;
+        outline-style: auto;
     }
     .deletebutton{
         margin-left: 2em;
