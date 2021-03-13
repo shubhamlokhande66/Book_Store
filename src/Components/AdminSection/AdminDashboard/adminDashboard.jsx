@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import AdminHeader from "../AdminHeader/AdminHeader";
-import Services from "../Services/Service"
-const Service =new Services();
+import Services from "../AdminService/Service"
 import Books from "../Books/Books"
 import "./Dashboard.scss";
 import { connect } from 'react-redux';
 import { GetBook } from '../Redux/Action/Action';
 import ProtectedRoute from "../../../AdminProtectedRoutes"
-
+const Service =new Services();
 function Admindashboard(props){
   const [bookList, setBookList] = useState([]);
 
