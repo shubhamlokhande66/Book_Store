@@ -42,4 +42,33 @@ export default class productServices {
       },
     });
   };
+
+  addToWishlist = (id) => {
+    const user = localStorage.getItem("bookStoreToken");
+    return axios.Post(`${baseUrl}/add_wish_list/${id}`, false, {
+      headers: {
+        "x-access-token": `${user}`,
+      },
+    });
+  };
+
+
+  getWishlistItem = () => {
+    const user = localStorage.getItem("bookStoreToken");
+    return axios.Get(`${baseUrl}/get_wishlist_items`, {
+      headers: {
+        "x-access-token": `${user}`,
+      },
+    });
+  };
+
+  deleteWishlistItem = (id) => {
+    const user = localStorage.getItem("bookStoreToken");
+    return axios.Delete(`${baseUrl}/remove_wishlist_item/${id}`, {
+      headers: {
+        "x-access-token": `${user}`,
+      },
+    });
+  };
+
 }

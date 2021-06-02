@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import bookImg from "../../Assets/Image11.png";
-import cartItemLength from "../Context/Context";
+// import CartListContext from "../Context/Context"
 import Services from "../../Services/BookService";
-import AppBar from "../Header/Header"
-const services = new Services();
 import "./Cart.scss";
+import {  toast } from "react-toastify";
 
+
+const services = new Services();
+toast.configure() 
 export default function Cart(props) {
   const [detailForm, setDetailForm] = React.useState(false);
   const [summaryField, setSummaryField] = React.useState(false);
@@ -39,7 +41,7 @@ export default function Cart(props) {
     setStateFlag(false);
     setStateError("");
   };
-  React.useEffect(() => {
+ useEffect(() => {
     allCartItem();
   }, []);
 
@@ -51,11 +53,10 @@ export default function Cart(props) {
         setCartBooks(data.data.result);
       })
       .catch((err) => {
-        console.log(err);
-      });
+      })
   };
 
-  const patternCheck = () => {
+  const patternCheck = (props) => {
     makeInitial();
     const namePattern = /^[A-Z]{1}[a-z ]{3,}$/;
     const mobilePattern = /^[6-9]{1}[0-9]{9}$/;
@@ -94,8 +95,7 @@ export default function Cart(props) {
     return isError;
   };
 
-  const removeItem = (item) => {
-    debugger;
+  const removeItem = (item) => { debugger
 
     services
       .deleteCartItem(item._id)
@@ -105,6 +105,11 @@ export default function Cart(props) {
       })
       .catch((err) => {
         console.log("Error while removing" + err);
+      });
+      toast.success("Book delete successfully....", {
+        position: "top-left",
+        autoClose: 5000,
+        draggable: false,
       });
   };
 
@@ -133,28 +138,33 @@ export default function Cart(props) {
       .catch((err) => {
         console.log("Error occured while placing order" + err);
       });
+      toast.success("Book Order successfully....", {
+        position: "top-left",
+        autoClose: 5000,
+        draggable: false,
+      });
   };
 
   const handleCart = () => {
     this.props.history.push("/place");
   };
-
+  // const { cartBooks ,allCartItem } = useContext(CartListContext);
   const CartBooks = () => {
     return (
       <div>
         <div className="Cardcartbody">
-          {cartBooks.map((item) => (
+          {cartBooks?.map((item) => (
             <div className="displaycart">
               <div class=" cardcart">
                 <img class="card-img-top1" src={bookImg} alt="" />
 
                 <div className="titlecart">
-                  <h6 class="card-title"> {item.product_id.bookName}</h6>
+                  <h6 class="card-title"   > {item.product_id?.bookName}</h6>
                 </div>
 
-                <div className="authorcart">by {item.product_id.author}</div>
+                <div className="authorcart"> <h7 clasName="hautocart">by {item.product_id?.author}</h7></div>
 
-                <div className="pricecart">Rs.{item.product_id.price}</div>
+                <div className="pricecart"> <h7 clasName="hpricecart">Rs.{item.product_id?.price} </h7></div>
                 <div className="plusicon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +178,8 @@ export default function Cart(props) {
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                   </svg>
                 </div>
-                <input className="cartinput" value={item.product_id.quantity} />
+                <h6 className="cartinputh">
+                <input className="cartinput"   value={item.product_id?.quantity} /> </h6>
                 <div className="minuscart">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -188,6 +199,9 @@ export default function Cart(props) {
                     type="button"
                     class="btn btn-light"
                     onClick={() => removeItem(item)}
+                   
+                    data-testid='button'
+          
                   >
                     REMOVE
                   </button>
@@ -238,7 +252,7 @@ export default function Cart(props) {
     <div className="cartmain">
       <div class="card">
         <div class="card-body">
-          <div className="mycartname">My Cart ({cartBooks.length})</div>
+          <div className="mycartname">My Cart ({cartBooks?.length})</div>
           <CartBooks />
           {detailForm ? (
             ""
@@ -249,7 +263,8 @@ export default function Cart(props) {
                 class="btn btn-primarycart"
                 onClick={() => setDetailForm(true)}
               >
-                PLACE ORDER
+                <h6 className="placeorderh"  data-testid="item">PLACE ORDER</h6>
+                
               </button>
             </div>
           )}
@@ -257,13 +272,13 @@ export default function Cart(props) {
       </div>
 
       <div class="card">
-        <div className="customerdetails">Customer Details</div>
+        <div className="mycartname1" data-testid="item1">Customer Details</div>
         {detailForm ? (
           <div className="custombody">
             <form>
               <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="validationServer01">Full Name</label>
+                <div class="cart1 form-group col-md-6">
+                  <label className="namecolor" >Full Name</label>
                   <input
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -273,19 +288,22 @@ export default function Cart(props) {
                     class="form-controlcart"
                     id="inputEmail4"
                     placeholder="Full Name"
+                    inputProps={{
+                      'data-testid': 'nameInput'
+                    }}
+                    data-testid="nameInput"
                   />
                   <span className="error-output"> {nameError}</span>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="inputPassword4">Mobile Number</label>
+                <div class=" cart2 form-group col-md-6">
+                  <label className="namecolor">Mobile Number</label>
                   <input
+                   data-testid="MobileInput"
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
                     error={mobileFlag}
                     helperText={mobileError}
-                    type="password"
                     class="form-controlcart"
-                    id="inputPassword4"
                     placeholder="Mobile Number"
                   />
                   <span className="error-output"> {mobileError}</span>
@@ -293,7 +311,7 @@ export default function Cart(props) {
               </div>
 
               <div class="form-groupcart">
-                <label for="inputAddress">Address</label>
+                <label className="namecolor">Address</label>
                 <input
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
@@ -309,7 +327,7 @@ export default function Cart(props) {
 
               <div class="form-row">
                 <div class="form-groupcart col-md-6">
-                  <label for="inputCity">City/Town</label>
+                  <label className="namecolor">City/Town</label>
                   <input
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
@@ -322,8 +340,8 @@ export default function Cart(props) {
                   />
                   <span className="error-output"> {cityError}</span>
                 </div>
-                <div class="form-groupcart col-md-6">
-                  <label for="inputCity">State</label>
+                <div class="form-groupcart1 col-md-6">
+                  <label className="namecolor">State</label>
                   <input
                     value={state}
                     onChange={(e) => setState(e.target.value)}
@@ -346,8 +364,9 @@ export default function Cart(props) {
                   type="button"
                   class="btn btn-primarycart"
                   onClick={Continue}
+                  data-testid="Continue"
                 >
-                  CONTINUE
+                 <h6 className="placeorderh"  data-testid="item">CONTINUE</h6>
                 </button>
               </div>
             )}
@@ -358,7 +377,7 @@ export default function Cart(props) {
       </div>
 
       <div class="card">
-        <div className="customerdetails">Order Summary</div>
+        <div className="mycartname2">Order Summary</div>
         {summaryField ? (
           <>
             <CheckoutItem />

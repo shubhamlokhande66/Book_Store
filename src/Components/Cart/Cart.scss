@@ -69,6 +69,18 @@
 .mycartname {
   font-weight: bold;
 }
+.mycartname1 {
+  margin-left: 2em;
+  font-weight: bold;
+  height: 3em;
+}
+.mycartname2 {
+  margin-left: 3em;
+  font-weight: bold;
+  height: 3em;
+}
+
+
 .blockButton {
   margin-left: 50em;
   color: #3371b5;
@@ -109,6 +121,9 @@
 .placebutton {
   cursor: pointer;
 }
+.form-groupcart1{
+margin-top: 2em;
+}
 
 @media all and (min-device-width: 320px) and (max-device-width: 960px) {
   .card-img-top1 {
@@ -135,10 +150,13 @@
     margin-top: -26em;
   }
   .authorcart {
-    margin-left: 25em;
+    margin-left: 12em;
+    font-size: 2em;
+    margin-top: -9px;
   }
   .pricecart {
-    margin-left: 25em;
+    margin-left: 13em;
+    font-size: 2em;
   }
   .plusicon {
     margin-left: 25em;
@@ -159,8 +177,59 @@
     width: 10em;
     height: 10em;
   }
+  .card-title{
+    font-size: 3em;
+  }
   .btn {
     width: 15em;
     height: 4em;
   }
+  .form-controlcart{
+    height: 7em;
+    width: 62em;
+    flex-direction: column;
+    display: flex;
+ border-color:black;
+  }
+  .cart2{
+    margin-top: 14em;
+    margin-left: -33em;
+  }
+  .form-groupcart{
+    margin-top:0em;
+    position: absolute;
+  }
+  .form-controlcart1{
+    width: 62em;
+    height: 7em;
+    border-color:black;
+  }
+  .namecolor{
+    font-size: 3em;
+  }
+.form-groupcart1{
+  margin-top: 1em;
+  margin-left: -33em;
+}
+.form-groupcart{
+ position: relative;
+  margin-top:13em;
+}
+.placeorderh{
+  font-size: 2em;
+}
+.mycartname1{
+  font-size: 3em;
+  margin-left: 1em;
+
+}
+.mycartname2{
+
+  font-size: 3em;
+  margin-left: 1em;
+}
+.hautocart{
+  margin-left: 12em;
+    font-size: 2em;
+}
 }

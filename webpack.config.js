@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 const port = process.env.PORT || 3000;
 
@@ -56,7 +57,9 @@ module.exports = {
       template: "dist/index.html",
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new Dotenv(),
   ],
+  
   devServer: {
     host: "localhost",
     port: port,

@@ -4,6 +4,29 @@
   position: sticky;
 }
 .navbarDashboard {
-  top: 5em;
+  margin-top: 4em;
   z-index: 2;
+}
+
+.CartDash{
+  z-index: -1;
+  position: absolute;
+}
+.WishlistDash{
+  z-index: -1;
+position: absolute;
+
+}
+.reactloading{
+  margin-top: 10em;
+  margin-left:38em
+}
+.reactloadinglazy{
+
+  margin-left:35em
+}
+.reactloadinglazy1{
+  margin-left:35em;
+  z-index: 3;
+
 }

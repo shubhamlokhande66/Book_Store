@@ -1,3 +1,5 @@
+$color :brown;
+
 .form-group {
   width: 20em;
 }
@@ -16,7 +18,7 @@
   width: 20em;
   height: 2.5em;
   cursor: pointer;
-  background-color: brown;
+  background-color: $color;
 }
 
 .admibody {

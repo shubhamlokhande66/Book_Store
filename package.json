@@ -6,9 +6,14 @@
   "scripts": {
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
     "start": "webpack serve --mode development --env development ",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors",
     "build:staging": "env-cmd -f .env.staging react-scripts build",
     "build": "webpack"
+  },
+  "transform": {
+    "^.+\\.(js)$": "<rootDir>/node_modules/webpack-babel-jest"
   },
   "keywords": [],
   "author": "",
@@ -45,16 +50,30 @@
   "dependencies": {
     "@babel/runtime": "^7.12.13",
     "@hot-loader/react-dom": "^17.0.1",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^6.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-scss-transform": "^1.0.1",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
-    "react-bootstrap": "^1.4.3",
+    "react-bootstrap": "^1.5.1",
+    "react-bootstrap-4-pagination": "^1.0.4",
     "react-dom": "^17.0.1",
+    "react-loading": "^2.0.3",
+    "react-redux": "^7.2.2",
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.2.0",
-    "sass-loader": "^11.0.1"
+    "react-toastify": "^7.0.3",
+    "reactstrap": "^8.9.0",
+    "redux": "^4.0.5",
+    "sass-loader": "^11.0.1",
+    "webpack-babel-jest": "^1.0.4"
   }
 }

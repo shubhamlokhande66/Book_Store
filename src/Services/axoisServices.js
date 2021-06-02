@@ -11,4 +11,11 @@ export default class axiosServices {
   Delete = (url, isHeaderRequired = false) => {
     return axios.delete(url, isHeaderRequired);
   };
+  Put = (url, isHeaderRequired = false) => {
+    return axios.put(url,isHeaderRequired);
+  };
 }
+
+
+
+

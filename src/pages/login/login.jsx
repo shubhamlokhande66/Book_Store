@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import userServices from "../../Services/userServices";
+import { withRouter } from "react-router-dom";
 import "./login.scss";
 const regexValidateEmail = new RegExp(
   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$$/
@@ -18,6 +19,7 @@ class Login extends Component {
       errorValid: {
         email: false,
         password: false,
+        showModal: false
       },
       enable: true,
       errors: {
@@ -62,6 +64,10 @@ class Login extends Component {
     });
   };
 
+  // handleCloseModal () {
+  //   this.setState({ showModal: false });
+  // }
+
   onSubmit = () => {
     let data = {
       email: this.state.email,
@@ -76,10 +82,11 @@ class Login extends Component {
         );
         localStorage.setItem("bookStoreToken", data.data.result.accessToken);
 
-        localStorage.setItem("email", data.data.email);
+        localStorage.setItem("Email", data.config.data);
         setTimeout(() => {
-          this.props.history.push("/");
+          this.props.history.push("/dashboard");
         }, 2000);
+      //  this.handleCloseModal();
       })
       .catch((err) => {
         console.log("Registration Error" + err);
@@ -90,8 +97,8 @@ class Login extends Component {
     return (
       <div className="signup">
         <form autocomplete="off">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email Id</label>
+          <div class="emialjs form-group">
+            <label className="exampleInputEmail1" >Email Id</label>
             <input
               value={this.state.email}
               onChange={this.onchangeEmail}
@@ -104,11 +111,14 @@ class Login extends Component {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter email"
+         
+                data-testid="emailInput"
+             
             />
-            <span className="error-output"> {this.state.errors["email"]}</span>
+            <span className="error-output"   data-testid="spanemailInput"> {this.state.errors["email"]}</span>
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Password</label>
+          <div class=" emialjs form-group">
+            <label className="exampleInputEmail1">Password</label>
             <input
               id="password"
               variant="outlined"
@@ -125,6 +135,7 @@ class Login extends Component {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter Password"
+              data-testid="passwordInput"
             />
             <span className="error-output">
               {" "}
@@ -135,6 +146,7 @@ class Login extends Component {
             type="button"
             class="btn1 btn-danger"
             onClick={(e) => this.onSubmit(e)}
+            data-testid="submit"
           >
             Login
           </button>
@@ -153,4 +165,4 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+export default withRouter(Login);

@@ -1,0 +1,42 @@
+.noteCard1{
+    width: 14em;
+    height: 17.5em;
+}
+.container-fluid1{
+    width: 60em;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cartmain1{
+ width: 63em;
+ margin-left: 8em;
+}
+
+.mywhishlistname {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+@media all and (min-device-width: 320px) and (max-device-width: 960px) {
+
+  .noteCard1{
+    width: 46em;
+    height: 51.5em
+
+}
+  .container-fluid1{
+    width: 71em;
+    display: flex;
+    flex-wrap: wrap;
+}
+.displaywish{
+  margin-left: 7em;
+
+}
+.mywhishlistname{
+  font-size: 3em;
+  margin-left: 106px;
+
+
+}
+}

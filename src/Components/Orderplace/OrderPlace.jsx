@@ -45,7 +45,7 @@ export default function OrderPlaced() {
             Handledashboard();
           }}
         >
-          CONTINUE SHOPPING
+          <h6 className="continueshopping">CONTINUE SHOPPING</h6>
         </button>
       </div>
     </div>

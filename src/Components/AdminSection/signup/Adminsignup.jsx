@@ -12,7 +12,7 @@ const regexvalidatePassword = new RegExp(
 const regexvalidateName = new RegExp(/^[A-Z]{1}[a-z]{3,}$/);
 const regexvalidateMobile = new RegExp(/^.{10,}$/);
 
-class Signup extends Component {
+class AdminSignup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,7 +51,7 @@ class Signup extends Component {
     let errors = this.state.errors;
     let validate = false;
     if (!regexvalidateName.test(this.state.fullName)) {
-      errors.fullName = "Please Enter Valid Name Eg:Shubham";
+      errors.fullName = "Please Enter Valid Name ";
       validate = true;
     } else {
       errors.fullName = "";
@@ -86,7 +86,7 @@ class Signup extends Component {
     let errors = this.state.errors;
     let validate = false;
     if (!regexvalidatePassword.test(this.state.password)) {
-      errors.password = " Please Enter Valid Password Eg:Shubham@123";
+      errors.password = " Please Enter Valid Password ";
       validate = true;
     } else {
       errors.password = "";
@@ -178,6 +178,7 @@ class Signup extends Component {
                 fullWidthtype="email"
                 class="form-control"
                 placeholder="Enter Full Name"
+                data-testid="nameInput"
               />
 
               <span className="error-output">
@@ -197,6 +198,7 @@ class Signup extends Component {
                 type="email"
                 class="form-control"
                 placeholder="Enter email"
+                data-testid="emailInput"
               />
 
               <span className="error-output">
@@ -222,6 +224,7 @@ class Signup extends Component {
                 aria-describedby="emailHelp"
                 placeholder="Enter Password"
                 data-toggle="password"
+                data-testid="passwordInput"
               />
               <span
                 toggle="#input-pwd"
@@ -248,6 +251,7 @@ class Signup extends Component {
                 type="email"
                 class="form-control"
                 placeholder="Enter Mobile Number"
+                data-testid="MobileInput"
               />
 
               <span className="error-output">
@@ -259,6 +263,7 @@ class Signup extends Component {
               type="button"
               class="btn1 btn-danger"
               onClick={(e) => this.onSubmit(e)}
+              data-testid="submit"
             >
               Signup
             </button>
@@ -271,4 +276,4 @@ class Signup extends Component {
   }
 }
 
-export default withRouter(Signup);
+export default withRouter(AdminSignup);

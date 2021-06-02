@@ -106,6 +106,7 @@ class Login extends Component {
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
+                data-testid="emailInput"
               />
 
               <span className="error-output">
@@ -131,6 +132,7 @@ class Login extends Component {
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter Password"
+                data-testid="passwordInput"
               />
 
               <span className="error-output">
@@ -142,6 +144,7 @@ class Login extends Component {
               type="button"
               class="btnadmin btn-danger"
               onClick={(e) => this.onSubmit(e)}
+              data-testid="submit"
             >
               Login
             </button>

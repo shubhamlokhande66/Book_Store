@@ -116,7 +116,7 @@ class Signup extends Component {
     });
   };
 
-  onSubmit = () => {
+  onSubmit = () => { debugger
     let data = {
       fullName: this.state.fullName,
       email: this.state.email,
@@ -133,6 +133,7 @@ class Signup extends Component {
           password: "",
           mobilenumber: "",
         });
+        history.push("/dashboard");
       })
 
       .catch((err) => {
@@ -157,6 +158,8 @@ class Signup extends Component {
                 fullWidthtype="email"
                 class="form-control"
                 placeholder="Enter Full Name"
+                data-testid="nameInput"
+
               />
 
               <span className="error-output">
@@ -171,11 +174,11 @@ class Signup extends Component {
                 onChange={this.onchangeEmail}
                 variant="outlined"
                 label="email"
-                placeholder="email"
                 type="text"
                 type="email"
                 class="form-control"
                 placeholder="Enter email"
+                data-testid="emailInput"
               />
 
               <span className="error-output">
@@ -193,14 +196,12 @@ class Signup extends Component {
                 fullWidth
                 value={this.state.password}
                 onChange={this.onchangePassword}
-                placeholder="password"
                 type="text"
-                type={this.state.showPassword ? "text" : "password"}
                 class="form-control"
-                id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter Password"
                 data-toggle="password"
+                data-testid="passwordInput"
               />
               <span
                 toggle="#input-pwd"
@@ -222,11 +223,11 @@ class Signup extends Component {
                 fullWidth
                 value={this.state.mobilenumber}
                 onChange={this.onchangeMobileNo}
-                placeholder="mobilenumber"
                 type="text"
                 type="email"
                 class="form-control"
                 placeholder="Enter Mobile Number"
+                data-testid="MobileInput"
               />
 
               <span className="error-output">
@@ -238,7 +239,10 @@ class Signup extends Component {
               type="button"
               class="btn1 btn-danger"
               onClick={(e) => this.onSubmit(e)}
+              
+              data-testid="submit"
             >
+
               Signup
             </button>
           </div>
